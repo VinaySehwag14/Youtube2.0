@@ -2,7 +2,7 @@ import axios from "axios";
 
 const BASE_URL = "https://youtube-v31.p.rapidapi.com";
 
-console.log(process.env.REACT_APP_RAPID_API_KEY);
+// console.log(process.env.REACT_APP_RAPID_API_KEY);
 
 const options = {
   params: {
@@ -16,6 +16,6 @@ const options = {
 
 export const fetchFromAPI = async (url) => {
   const data = await axios.get(`${BASE_URL}/${url}`, options);
-  console.log(data, "data from api❤️❤️");
+  // console.log(data, "data from api❤️❤️");
   return data;
 };

@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { Box } from "@mui/material";
 
 import { Videos, ChannelCard } from "./";
-import { fetchFromAPI } from "../utils/fetchFromApi";
+import { fetchFromAPI } from "../utils/fetchFromAPI";
 
 const ChannelDetail = () => {
   const [channelDetail, setChannelDetail] = useState();
@@ -11,20 +11,20 @@ const ChannelDetail = () => {
 
   const { id } = useParams();
 
-  console.log(channelDetail, "chagnnel dtaile");
-  console.log(videos, "chagnnel videos");
+  // console.log(channelDetail, "chagnnel dtaile");
+  // console.log(videos, "chagnnel videos");
 
   useEffect(() => {
     const fetchResults = async () => {
       const data = await fetchFromAPI(`channels?part=snippet&id=${id}`);
-      console.log(data.data, "this is data in userfe");
+      // console.log(data.data, "this is data in userfe");
 
       setChannelDetail(data?.data?.items[0]);
 
       const videosData = await fetchFromAPI(
         `search?channelId=${id}&part=snippet%2Cid&order=date`
       );
-      console.log(videosData, "videosdagta");
+      // console.log(videosData, "videosdagta");
 
       setVideos(videosData?.data?.items);
     };
