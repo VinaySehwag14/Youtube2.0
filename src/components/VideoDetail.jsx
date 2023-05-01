@@ -5,7 +5,7 @@ import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import ReactPlayer from "react-player";
 
 import { Videos, Loader } from "./";
-import { fetchFromAPI } from "../utils/FetchFromAPI";
+import { fetchFromAPI } from "../utils/fetchFromApi";
 
 const VideoDetail = () => {
   const [videoDetail, setVideoDetail] = useState(null);
